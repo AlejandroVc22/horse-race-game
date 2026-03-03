@@ -1,0 +1,89 @@
+body{
+    background-color: #000;
+    color: #f5d36b;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+    margin: 0;
+}
+
+#portada{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button{
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: gold;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover{
+    background-color: #f5d36b;
+}
+
+.oculto{
+    display: none;
+}
+
+#cartaGrande{
+    width: 120px;
+    height: 160px;
+    margin: 20px auto;
+    background-color: white;
+    color: black;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0 0 20px gold;
+}
+
+#lineas{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px;
+}
+
+.carta{
+    width: 70px;
+    height: 100px;
+    background-color: darkred;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 20px;
+}
+
+.revelada{
+    background-color: white;
+    color: black;
+}
+
+.fila{
+    display: flex;
+    justify-content: center;
+    margin: 5px;
+}
+
+.celda{
+    width: 70px;
+    height: 50px;
+    border: 1px solid gold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.caballo{
+    font-size: 30px;
+}
