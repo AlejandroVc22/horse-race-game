@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Horse Racing Deluxe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="portada" class="layout">
+    <div class="portada-izquierda card">
+        <h1>🏇 HORSE RACING DELUXE</h1>
+        <p>Una simulación moderna del juego de cartas y caballos.</p>
+
+        <div id="auth">
+            <h2>Registro / Inicio de sesión</h2>
+            <input id="nombreUsuario" type="text" placeholder="Nombre de usuario">
+            <div class="botones-auth">
+                <button onclick="registrarUsuario()">Registrarse</button>
+                <button class="secundario" onclick="loginUsuario()">Iniciar sesión</button>
+            </div>
+            <p id="estadoAuth" class="mensaje"></p>
+        </div>
+    </div>
+
+    <div class="portada-derecha card">
+        <div id="panelUsuario" class="oculto">
+            <h3>Usuario: <span id="nombreActual"></span></h3>
+            <p>Puntos actuales: <span id="puntosActuales">0</span></p>
+
+            <div id="panelCompra" class="panel-seccion">
+                <h4>Comprar puntos</h4>
+                <label>Paquetes de 1000 puntos (10.000 COP c/u): </label>
+                <input id="paquetes" type="number" min="1" value="1">
+                <button onclick="comprarPuntos()">Comprar</button>
+                <p id="estadoCompra" class="mensaje"></p>
+            </div>
+
+            <div id="panelApuesta" class="panel-seccion">
+                <h4>Apuesta para la próxima carrera</h4>
+                <div class="fila-apuesta">
+                    <div>
+                        <label>Caballo:</label>
+                        <select id="caballoApuesta">
+                            <option value="♥">♥ Corazones</option>
+                            <option value="♦">♦ Diamantes</option>
+                            <option value="♣">♣ Tréboles</option>
+                            <option value="♠">♠ Picas</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Monto:</label>
+                        <input id="montoApuesta" type="number" min="1" value="100">
+                    </div>
+                </div>
+                <p id="estadoApuesta" class="mensaje"></p>
+            </div>
+
+            <button class="boton-principal" onclick="mostrarJuego()">INICIAR CARRERA</button>
+        </div>
+        <p class="nota-limite">* Máximo 4 usuarios en la plataforma.</p>
+    </div>
+</div>
+
+<div id="juego" class="oculto layout-juego">
+    <div class="columna-izquierda card">
+        <h2 id="mensaje">Haz clic en la carta para avanzar la carrera</h2>
+        <div id="cartaGrande" class="clicable" onclick="turnoManual()">
+            <span class="texto-carta-placeholder">Clic para sacar carta</span>
+        </div>
+        <button id="btnTurno" class="boton-principal" onclick="turnoManual()">Sacar carta</button>
+
+        <h3>Líneas de Eliminación</h3>
+        <div id="lineas"></div>
+
+        <div class="info-juego">
+            <p>Usuario: <span id="nombreActualJuego"></span></p>
+            <p>Puntos: <span id="puntosActualesJuego"></span></p>
+        </div>
+    </div>
+
+    <div class="columna-derecha card">
+        <h3>Pista</h3>
+        <div id="tablero"></div>
+        <h2 id="ganador"></h2>
+        <button class="secundario" onclick="volverAPortada()">Volver a la portada</button>
+    </div>
+</div>
+
+<div id="overlayGanador" class="overlay-ganador oculto">
+    <div class="overlay-contenido">
+        <div class="overlay-icono">🏆</div>
+        <h2 id="overlayTexto"></h2>
+        <p>Se han liquidado las apuestas y actualizado tus puntos.</p>
+        <button onclick="cerrarOverlayGanador()">Continuar</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
